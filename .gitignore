@@ -1,13 +1,9 @@
 __pycache__
-*/__pycache__
-*/*/__pycache__
-*.py[cod]
-*$py.class
-*.so
-# checkpoints
-data/brats21
-data/experiments
-*.vscode
-*.json
-exps
-data
+
+data/
+
+.vscode
+
+checkpoints/
+
+exps/
