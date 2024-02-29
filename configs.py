@@ -40,7 +40,7 @@ def parse_seg_args():
 
     # data augmentation
     parser.add_argument(
-        '--patch_size', nargs='+', type=int, default=[32, 64, 128, 256, 320, 320], help='patch size'
+        '--patch_size', nargs='+', type=int, default=[128, 128, 128], help='patch size'
     )
     parser.add_argument(
         '--pos_ratio',

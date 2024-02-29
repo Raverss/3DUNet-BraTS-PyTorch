@@ -1,5 +1,5 @@
 import numpy as np
-from medpy.metric import hd95 as hd95_medpy
+from medpy.metric import hd95 as hd95_medpy # type: ignore
 from torch import Tensor
 
 
@@ -17,7 +17,7 @@ def hd95(output:Tensor, target:Tensor, spacing=None) -> np.ndarray:
     """ output and target should all be boolean tensors"""
     output = output.bool().cpu().numpy()
     target = target.bool().cpu().numpy()
-    
+
     B, C = target.shape[:2]
     hd95 = np.zeros((B, C), dtype=np.float64)
     for b in range(B):
@@ -35,5 +35,5 @@ def hd95(output:Tensor, target:Tensor, spacing=None) -> np.ndarray:
                 hd95[b, c] = 373.1287
             else:
                 hd95[b, c] = hd95_medpy(pred, gt, voxelspacing=spacing)
-    
+
     return hd95
